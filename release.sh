@@ -14,7 +14,7 @@ VERSION="$1"
 python -m pip install --upgrade pip setuptools wheel
 python -m pip install -r requirements-release.txt
 python -m pytest
-python -c "from pathlib import Path; from project_init import __version__; import re; assert __version__ == '$VERSION', f'__version__ in project_init.py is {__version__}, expected {VERSION}'"
+python -c "from pathlib import Path; from src import __version__; import re; assert __version__ == '$VERSION', f'__version__ in src is {__version__}, expected {VERSION}'"
 
 python -m build
 

@@ -1,5 +1,5 @@
 import unittest
-from project_init import __version__
+from src import __version__
 
 
 class VersionTests(unittest.TestCase):
