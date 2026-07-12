@@ -1,2 +1,4 @@
 pytest
-build
+python-semantic-release
+pyinstaller
+Pillow

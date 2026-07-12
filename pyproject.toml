@@ -18,3 +18,11 @@ build-backend = "setuptools.build_meta"
 minversion = "7.0"
 addopts = "-q"
 testpaths = ["tests"]
+
+[tool.semantic_release]
+version_variables = ["project_init.py:__version__"]
+commit_message = "chore(release): bump to {version}"
+changelog_file = "CHANGELOG.md"
+build_command = ""
+upload_to_pypi = false
+upload_to_vcs_release = false
