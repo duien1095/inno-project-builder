@@ -1,0 +1,20 @@
+[project]
+name = "project_init"
+version = "0.1.0"
+description = "Ứng dụng desktop tạo cấu trúc dự án theo template cho quy hoạch"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [ { name = "INNO", email = "noreply@example.com" } ]
+dependencies = [
+    "Pillow",
+]
+
+[build-system]
+requires = ["setuptools>=61.0","wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q"
+testpaths = ["tests"]
