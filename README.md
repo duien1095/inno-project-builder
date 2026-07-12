@@ -1,4 +1,4 @@
-# PROJECT INIT
+# INNO PROJECT BUILDER (Chuẩn hóa thư mục quy hoạch)
 
 ![HRDD Logo](./assets/logo.png)
 
