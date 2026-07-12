@@ -2,8 +2,8 @@
 cd /d "%~dp0"
 where py >nul 2>nul
 if %ERRORLEVEL% EQU 0 (
-    py -3 project_init.py
+    py -3 -m src.main
 ) else (
-    python project_init.py
+    python -m src.main
 )
 pause
