@@ -3,143 +3,183 @@
     {
       "template_name": "QHC",
       "folders": [
-        "01_INPUT",
-        "02_PROCESS",
-        "03_OUTPUT",
+        "01.INPUT",
+        "02.PROCESS",
+        "03.OUTPUT",
 
-        "01_INPUT/01_VAN_BAN_PHAP_LY",
-        "01_INPUT/02_RANH_QHC",
-        "01_INPUT/03_QH_CAP_TREN",
+        "01.INPUT/01.PHAP_LY",
+        "01.INPUT/02.RANH_GIOI",
+        "01.INPUT/03.DO_DAC",
+        "01.INPUT/04.QH_CAP_TREN",
 
-        "01_INPUT/04_QHC",
-        "01_INPUT/04_QHC/QHC_DA_DUYET",
-        "01_INPUT/04_QHC/DCCB_QHC",
+        "01.INPUT/05.QHC",
+        "01.INPUT/05.QHC/01.QHC_DUYET",
+        "01.INPUT/05.QHC/02.DCCB_QHC",
 
-        "01_INPUT/05_TONG_HOP_QHPK",
-        "01_INPUT/06_TONG_HOP_QHCT_VA_DU_AN_LIEN_QUAN",
-        "01_INPUT/07_TONG_HOP_QH_NGANH",
+        "01.INPUT/06.QHPK",
+        "01.INPUT/07.QHCT_DA",
+        "01.INPUT/08.QH_NGANH",
 
-        "01_INPUT/08_BAN_DO_DO_DAC",
+        "01.INPUT/09.DU_LIEU_NEN",
+        "01.INPUT/09.DU_LIEU_NEN/01.KH_SDD",
+        "01.INPUT/09.DU_LIEU_NEN/02.DIA_CHINH",
+        "01.INPUT/09.DU_LIEU_NEN/03.QUY_DAT_CONG",
+        "01.INPUT/09.DU_LIEU_NEN/04.CT_HTXH",
 
-        "01_INPUT/09_DU_LIEU_NEN",
-        "01_INPUT/09_DU_LIEU_NEN/KE_HOACH_SU_DUNG_DAT",
-        "01_INPUT/09_DU_LIEU_NEN/BAN_DO_DIA_CHINH",
-        "01_INPUT/09_DU_LIEU_NEN/DANH_MUC_QUY_DAT_CONG",
-        "01_INPUT/09_DU_LIEU_NEN/DANH_MUC_CONG_TRINH_HTXH",
+        "01.INPUT/10.DL_LIEN_DANH",
+        "01.INPUT/11.DL_CAP_NHAT",
+        "01.INPUT/12.GOP_Y_HOP",
 
-        "01_INPUT/10_DU_LIEU_LIEN_DANH",
-        "01_INPUT/11_DU_LIEU_CAP_NHAT",
-        "01_INPUT/12_GOP_Y_VA_HOP"
+        "02.PROCESS/01.HO_SO",
+        "02.PROCESS/02.CAD",
+        "02.PROCESS/03.WORD",
+        "02.PROCESS/04.PPT",
+        "02.PROCESS/05.KMZ",
+        "02.PROCESS/06.PSD",
+        "02.PROCESS/07.ANH_MINH_HOA",
+        "02.PROCESS/08.GIS"
       ]
     },
 
     {
       "template_name": "QHPK",
       "folders": [
-        "01_INPUT",
-        "02_PROCESS",
-        "03_OUTPUT",
+        "01.INPUT",
+        "02.PROCESS",
+        "03.OUTPUT",
 
-        "01_INPUT/01_VAN_BAN_PHAP_LY",
-        "01_INPUT/02_RANH_QHPK",
-        "01_INPUT/03_QH_CAP_TREN",
+        "01.INPUT/01.PHAP_LY",
+        "01.INPUT/02.RANH_GIOI",
+        "01.INPUT/03.DO_DAC",
+        "01.INPUT/04.QH_CAP_TREN",
 
-        "01_INPUT/04_QHPK",
-        "01_INPUT/04_QHPK/QHPK_DA_DUYET",
-        "01_INPUT/04_QHPK/DCCB_QHPK",
+        "01.INPUT/05.QHPK",
+        "01.INPUT/05.QHPK/01.QHPK_DUYET",
+        "01.INPUT/05.QHPK/02.DCCB_QHPK",
 
-        "01_INPUT/05_TONG_HOP_QHCT_VA_DU_AN_LIEN_QUAN",
-        "01_INPUT/06_TONG_HOP_QH_NGANH",
+        "01.INPUT/06.QHCT_DA",
+        "01.INPUT/07.QH_NGANH",
 
-        "01_INPUT/07_BAN_DO_DO_DAC",
+        "01.INPUT/08.DU_LIEU_NEN",
+        "01.INPUT/08.DU_LIEU_NEN/01.KH_SDD",
+        "01.INPUT/08.DU_LIEU_NEN/02.DIA_CHINH",
+        "01.INPUT/08.DU_LIEU_NEN/03.QUY_DAT_CONG",
+        "01.INPUT/08.DU_LIEU_NEN/04.CT_HTXH",
 
-        "01_INPUT/08_DU_LIEU_NEN",
-        "01_INPUT/08_DU_LIEU_NEN/KE_HOACH_SU_DUNG_DAT",
-        "01_INPUT/08_DU_LIEU_NEN/BAN_DO_DIA_CHINH",
-        "01_INPUT/08_DU_LIEU_NEN/DANH_MUC_QUY_DAT_CONG",
-        "01_INPUT/08_DU_LIEU_NEN/DANH_MUC_CONG_TRINH_HTXH",
+        "01.INPUT/09.DL_LIEN_DANH",
+        "01.INPUT/10.DL_CAP_NHAT",
+        "01.INPUT/11.GOP_Y_HOP",
 
-        "01_INPUT/09_DU_LIEU_LIEN_DANH",
-        "01_INPUT/10_DU_LIEU_CAP_NHAT",
-        "01_INPUT/11_GOP_Y_VA_HOP"
+        "02.PROCESS/01.HO_SO",
+        "02.PROCESS/02.CAD",
+        "02.PROCESS/03.WORD",
+        "02.PROCESS/04.PPT",
+        "02.PROCESS/05.KMZ",
+        "02.PROCESS/06.PSD",
+        "02.PROCESS/07.ANH_MINH_HOA",
+        "02.PROCESS/08.GIS"
       ]
     },
 
     {
       "template_name": "QHCT",
       "folders": [
-        "01_INPUT",
-        "02_PROCESS",
-        "03_OUTPUT",
+        "01.INPUT",
+        "02.PROCESS",
+        "03.OUTPUT",
 
-        "01_INPUT/01_VAN_BAN_PHAP_LY",
-        "01_INPUT/02_RANH_QHCT",
-        "01_INPUT/03_QH_CAP_TREN",
+        "01.INPUT/01.PHAP_LY",
+        "01.INPUT/02.RANH_GIOI",
+        "01.INPUT/03.DO_DAC",
+        "01.INPUT/04.QH_CAP_TREN",
 
-        "01_INPUT/04_QHCT",
-        "01_INPUT/04_QHCT/QHCT_DA_DUYET",
-        "01_INPUT/04_QHCT/DCCB_QHCT",
+        "01.INPUT/05.QHCT",
+        "01.INPUT/05.QHCT/01.QHCT_DUYET",
+        "01.INPUT/05.QHCT/02.DCCB_QHCT",
 
-        "01_INPUT/05_DU_AN_LIEN_QUAN",
-        "01_INPUT/06_TONG_HOP_QH_NGANH",
+        "01.INPUT/06.DA_LIEN_QUAN",
+        "01.INPUT/07.QH_NGANH",
 
-        "01_INPUT/07_BAN_DO_DO_DAC",
+        "01.INPUT/08.DU_LIEU_NEN",
+        "01.INPUT/08.DU_LIEU_NEN/01.KH_SDD",
+        "01.INPUT/08.DU_LIEU_NEN/02.DIA_CHINH",
+        "01.INPUT/08.DU_LIEU_NEN/03.QUY_DAT_CONG",
+        "01.INPUT/08.DU_LIEU_NEN/04.CT_HTXH",
 
-        "01_INPUT/08_DU_LIEU_NEN",
-        "01_INPUT/08_DU_LIEU_NEN/KE_HOACH_SU_DUNG_DAT",
-        "01_INPUT/08_DU_LIEU_NEN/BAN_DO_DIA_CHINH",
-        "01_INPUT/08_DU_LIEU_NEN/DANH_MUC_QUY_DAT_CONG",
-        "01_INPUT/08_DU_LIEU_NEN/DANH_MUC_CONG_TRINH_HTXH",
+        "01.INPUT/09.DL_LIEN_DANH",
+        "01.INPUT/10.DL_CAP_NHAT",
+        "01.INPUT/11.GOP_Y_HOP",
 
-        "01_INPUT/09_DU_LIEU_LIEN_DANH",
-        "01_INPUT/10_DU_LIEU_CAP_NHAT",
-        "01_INPUT/11_GOP_Y_VA_HOP"
+        "02.PROCESS/01.HO_SO",
+        "02.PROCESS/02.CAD",
+        "02.PROCESS/03.WORD",
+        "02.PROCESS/04.PPT",
+        "02.PROCESS/05.KMZ",
+        "02.PROCESS/06.PSD",
+        "02.PROCESS/07.ANH_MINH_HOA",
+        "02.PROCESS/08.GIS"
       ]
     },
 
     {
       "template_name": "CONCEPT_QHPK",
       "folders": [
-        "01_INPUT",
-        "02_PROCESS",
-        "03_OUTPUT",
+        "01.INPUT",
+        "02.PROCESS",
+        "03.OUTPUT",
 
-        "01_INPUT/01_VAN_BAN_PHAP_LY",
-        "01_INPUT/02_RANH_QH_VA_DO_DAC",
-        "01_INPUT/03_QH_CAP_TREN",
+        "01.INPUT/01.PHAP_LY",
+        "01.INPUT/02.RANH_GIOI",
+        "01.INPUT/03.DO_DAC",
+        "01.INPUT/04.QH_CAP_TREN",
 
-        "01_INPUT/04_YEU_CAU_DE_BAI_CDT",
-        "01_INPUT/05_DU_AN_LIEN_QUAN",
-        "01_INPUT/06_DU_LIEU_CAP_NHAT",
+        "01.INPUT/05.DE_BAI_CDT",
+        "01.INPUT/06.DA_LIEN_QUAN",
+        "01.INPUT/07.DL_CAP_NHAT",
 
-        "01_INPUT/07_DU_LIEU_TEAM_NOI_BO",
-        "01_INPUT/07_DU_LIEU_TEAM_NOI_BO/TEAM_KIEN_TRUC",
-        "01_INPUT/07_DU_LIEU_TEAM_NOI_BO/TEAM_HA_TANG",
+        "01.INPUT/08.TEAM_NOI_BO",
+        "01.INPUT/08.TEAM_NOI_BO/01.KIEN_TRUC",
+        "01.INPUT/08.TEAM_NOI_BO/02.HA_TANG",
 
-        "01_INPUT/08_GOP_Y_VA_HOP"
+        "01.INPUT/09.GOP_Y_HOP",
+
+        "02.PROCESS/01.PPT",
+        "02.PROCESS/02.HO_SO",
+        "02.PROCESS/03.CAD",
+        "02.PROCESS/04.KMZ",
+        "02.PROCESS/05.PSD",
+        "02.PROCESS/06.ANH_MINH_HOA"
       ]
     },
 
     {
       "template_name": "CONCEPT_QHCT",
       "folders": [
-        "01_INPUT",
-        "02_PROCESS",
-        "03_OUTPUT",
+        "01.INPUT",
+        "02.PROCESS",
+        "03.OUTPUT",
 
-        "01_INPUT/01_VAN_BAN_PHAP_LY",
-        "01_INPUT/02_RANH_QH_VA_DO_DAC",
-        "01_INPUT/03_QH_CAP_TREN",
+        "01.INPUT/01.PHAP_LY",
+        "01.INPUT/02.RANH_GIOI",
+        "01.INPUT/03.DO_DAC",
+        "01.INPUT/04.QH_CAP_TREN",
 
-        "01_INPUT/04_YEU_CAU_DE_BAI_CDT",
-        "01_INPUT/05_DU_AN_LIEN_QUAN",
-        "01_INPUT/06_DU_LIEU_CAP_NHAT",
+        "01.INPUT/05.DE_BAI_CDT",
+        "01.INPUT/06.DA_LIEN_QUAN",
+        "01.INPUT/07.DL_CAP_NHAT",
 
-        "01_INPUT/07_DU_LIEU_TEAM_NOI_BO",
-        "01_INPUT/07_DU_LIEU_TEAM_NOI_BO/TEAM_KIEN_TRUC",
-        "01_INPUT/07_DU_LIEU_TEAM_NOI_BO/TEAM_HA_TANG",
+        "01.INPUT/08.TEAM_NOI_BO",
+        "01.INPUT/08.TEAM_NOI_BO/01.KIEN_TRUC",
+        "01.INPUT/08.TEAM_NOI_BO/02.HA_TANG",
 
-        "01_INPUT/08_GOP_Y_VA_HOP"
+        "01.INPUT/09.GOP_Y_HOP",
+
+        "02.PROCESS/01.PPT",
+        "02.PROCESS/02.HO_SO",
+        "02.PROCESS/03.CAD",
+        "02.PROCESS/04.KMZ",
+        "02.PROCESS/05.PSD",
+        "02.PROCESS/06.ANH_MINH_HOA"
       ]
     }
   ]
