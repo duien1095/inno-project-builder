@@ -31,7 +31,7 @@ Dự án này cung cấp một ứng dụng desktop Windows để khởi tạo n
 
 ### 2. Cài đặt
 **Cách 1: Chạy trực tiếp (đơn giản nhất)**
-- Tải file `project_init_portable.exe` từ folder `dist_portable/`
+- Tải file `project_init_portable.exe` từ folder `dist/`
 - Không cần cài đặt Python hay các dependencies khác
 
 **Cách 2: Chạy từ source code**
@@ -67,6 +67,51 @@ Dự án này cung cấp một ứng dụng desktop Windows để khởi tạo n
 ### 5. Kết quả sau khi tạo
 - Tất cả thư mục và file từ template được sao chép vào thư mục dự án
 - Có thể bắt đầu làm việc ngay
+
+## Cơ chế Build
+
+Ứng dụng được release dưới dạng **một file .exe portable duy nhất**, không cần cài đặt Python hay bất kỳ dependency nào.
+
+### Build portable (one-file .exe)
+
+Sử dụng PyInstaller để đóng gói toàn bộ ứng dụng:
+
+```bash
+# Cài PyInstaller
+pip install pyinstaller
+
+# Build one-file portable
+python -m PyInstaller --noconfirm --onefile --windowed ^
+  --name project_init_portable ^
+  --add-data "templates;templates" ^
+  --add-data "templates_config.json;." ^
+  --add-data "assets_logo.png;." ^
+  --hidden-import PIL ^
+  --hidden-import PIL._tkinter_finder ^
+  --workpath _build_temp/project_init_portable ^
+  --distpath dist ^
+  project_init.py
+```
+
+Kết quả: `dist/project_init_portable.exe` — file .exe duy nhất (~20-30MB), copy và chạy trực tiếp trên mọi máy Windows không cần Python.
+
+### Release tự động
+
+Script `release.bat` (Windows) và `release.sh` (Linux/Mac) tự động hóa quy trình release:
+
+```bash
+# Windows
+release.bat 0.2.0
+
+# Linux/Mac
+./release.sh 0.2.0
+```
+
+Script sẽ:
+1. Cài đặt dependencies
+2. Chạy test suite (`pytest`)
+3. Kiểm tra version khớp với `__version__` trong `project_init.py`
+4. Build portable .exe với PyInstaller
 
 ## Ghi chú
 - Ứng dụng đọc template từ thư mục templates/

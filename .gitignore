@@ -1,7 +1,7 @@
 # Build artifacts
 build/
-dist/
-dist_portable/
+# dist/
+_build_temp/
 *.egg-info/
 
 # Python
