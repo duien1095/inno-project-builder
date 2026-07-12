@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNO PROJECT BUILDER - Release</title>
+    <style>
+        :root {
+            --primary: #d71b24;
+            --primary-hover: #b0161d;
+            --dark: #1f2937;
+            --gray: #4b5563;
+            --light-gray: #f3f4f6;
+            --bg: #f5f5f7;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* ── HEADER ── */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 24px 0;
+        }
+
+        .header-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .header-text h1 {
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .header-text p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* ── MAIN ── */
+        .container {
+            max-width: 960px;
+            margin: 32px auto;
+            padding: 0 24px;
+        }
+
+        .hero {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 48px 40px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 32px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 560px;
+            margin: 0 auto 32px;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(215,27,36,0.3);
+        }
+
+        .btn-download:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-download:active {
+            transform: translateY(0);
+        }
+
+        .btn-download .icon {
+            font-size: 28px;
+        }
+
+        .btn-download .sub {
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .btn-download .btn-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .meta-info {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        .meta-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .meta-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── CARDS ── */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .card ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .card p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* ── TEMPLATES ── */
+        .template-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .template-tag {
+            background: var(--light-gray);
+            color: var(--dark);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* ── RELEASE NOTES ── */
+        .release-notes {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 32px;
+        }
+
+        .release-notes h3 {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .release-notes .version-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .release-notes ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .release-notes ul li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .release-notes ul li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .release-notes .changelog-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .release-notes .changelog-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            padding: 32px 24px;
+            color: var(--gray);
+            font-size: 13px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 640px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .hero { padding: 32px 20px; }
+            .hero h2 { font-size: 24px; }
+            .btn-download { padding: 14px 24px; font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-inner">
+        <div class="logo">D</div>
+        <div class="header-text">
+            <h1>INNO PROJECT BUILDER</h1>
+            <p>Khởi tạo cấu trúc dự án quy hoạch chuẩn — Portable &amp; Miễn phí</p>
+        </div>
+    </div>
+</header>
+
+<!-- MAIN -->
+<div class="container">
+
+    <!-- HERO / DOWNLOAD -->
+    <div class="hero">
+        <h2>🚀 Tải ngay phiên bản mới nhất</h2>
+        <p>
+            Ứng dụng desktop giúp khởi tạo nhanh cấu trúc thư mục dự án quy hoạch
+            chỉ với một cú nhấp chuột. Không cần cài đặt Python.
+        </p>
+
+        <a class="btn-download" href="https://github.com/duien1095/inno-project-builder/releases/latest/download/project_init_portable.exe" id="downloadBtn">
+            <span class="icon">⬇</span>
+            <span class="btn-text">
+                <span>Tải về cho Windows</span>
+                <span class="sub">project_init_portable.exe</span>
+            </span>
+        </a>
+
+        <div class="meta-info" id="versionInfo">
+            <span>Đang tải thông tin phiên bản...</span>
+        </div>
+    </div>
+
+    <!-- 2-COL GRID -->
+    <div class="grid-2">
+        <div class="card">
+            <h3>📋 Tính năng</h3>
+            <ul>
+                <li>Tạo cấu trúc thư mục theo template chuẩn</li>
+                <li>Hỗ trợ 5 loại đồ án quy hoạch</li>
+                <li>Giao diện trực quan, dễ sử dụng</li>
+                <li>Kiểm tra an toàn đường dẫn</li>
+                <li>Chạy portable, không cần cài đặt</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📁 Template có sẵn</h3>
+            <p>Ứng dụng hỗ trợ các template sau:</p>
+            <div class="template-list">
+                <span class="template-tag">QHC</span>
+                <span class="template-tag">QHPK</span>
+                <span class="template-tag">QHCT</span>
+                <span class="template-tag">CONCEPT_QHPK</span>
+                <span class="template-tag">CONCEPT_QHCT</span>
+            </div>
+            <p style="margin-top: 12px; font-size: 13px;">
+                Mỗi template tự động tạo cấu trúc thư mục INPUT → PROCESS → OUTPUT
+                phù hợp với từng loại đồ án.
+            </p>
+        </div>
+    </div>
+
+    <!-- RELEASE NOTES (tự động cập nhật từ GitHub API) -->
+    <div class="release-notes" id="releaseNotes">
+        <h3>📝 Ghi chú phát hành</h3>
+        <div id="releaseContent">
+            <p style="color: var(--gray);">Đang tải thông tin...</p>
+        </div>
+        <a class="changelog-link" href="https://github.com/duien1095/inno-project-builder/releases" target="_blank">
+            Xem tất cả phiên bản →
+        </a>
+    </div>
+
+    <!-- HƯỚNG DẪN -->
+    <div class="grid-2">
+        <div class="card">
+            <h3>🔧 Yêu cầu hệ thống</h3>
+            <ul>
+                <li>Windows 7 trở lên (64-bit)</li>
+                <li>Dung lượng ổ đĩa trống: ~50 MB</li>
+                <li>RAM: tối thiểu 256 MB</li>
+                <li><strong>Không cần cài Python</strong></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📖 Hướng dẫn sử dụng</h3>
+            <ul>
+                <li>Tải file <code>project_init_portable.exe</code></li>
+                <li>Chạy file .exe (có thể bị Windows SmartScreen chặn, nhấn "Run anyway")</li>
+                <li>Chọn thư mục dự án → Chọn template → Nhấn KHỞI TẠO</li>
+                <li>Cấu trúc thư mục sẽ được tạo tự động</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CÁCH BUILD -->
+    <div class="release-notes">
+        <h3>🛠 Dành cho nhà phát triển</h3>
+        <p style="color: var(--gray); font-size: 14px;">
+            Build portable từ source code:
+        </p>
+        <pre style="background: var(--light-gray); padding: 16px; border-radius: 8px; font-size: 13px; overflow-x: auto; margin-top: 8px;"><code>git clone https://github.com/duien1095/inno-project-builder.git
+cd inno-project-builder
+pip install -r requirements-release.txt
+release.bat 0.1.0</code></pre>
+        <p style="margin-top: 8px; font-size: 13px; color: var(--gray);">
+            Kết quả: <code>dist/project_init_portable.exe</code>
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <p>
+        Phát triển bởi <strong>HRDD - Creativity at Work</strong> &nbsp;|&nbsp;
+        <a href="https://github.com/duien1095/inno-project-builder">GitHub</a> &nbsp;|&nbsp;
+        <a href="https://github.com/duien1095/inno-project-builder/issues">Báo lỗi</a>
+    </p>
+</footer>
+
+<script>
+// Lấy thông tin release mới nhất từ GitHub API
+async function loadLatestRelease() {
+    try {
+        const res = await fetch('https://api.github.com/repos/duien1095/inno-project-builder/releases/latest');
+        if (!res.ok) throw new Error('Không tìm thấy release');
+
+        const data = await res.json();
+        const version = data.tag_name.replace(/^v/, '');
+        const published = new Date(data.published_at).toLocaleDateString('vi-VN', {
+            year: 'numeric', month: 'long', day: 'numeric'
+        });
+
+        // Cập nhật link download
+        const downloadBtn = document.getElementById('downloadBtn');
+        downloadBtn.href = data.assets.length > 0
+            ? data.assets[0].browser_download_url
+            : `https://github.com/duien1095/inno-project-builder/releases/download/${data.tag_name}/project_init_portable.exe`;
+
+        // Cập nhật version info
+        document.getElementById('versionInfo').innerHTML = `
+            Phiên bản <strong>v${version}</strong> —
+            phát hành ngày ${published} —
+            <a href="${data.html_url}" target="_blank">Xem chi tiết →</a>
+        `;
+
+        // Cập nhật release notes
+        const releaseContent = document.getElementById('releaseContent');
+        const body = data.body
+            ? data.body
+                .replace(/### /g, '<strong>')
+                .replace(/\n- /g, '</strong><br>• ')
+                .replace(/\n\n/g, '<br><br>')
+                .replace(/\n/g, '<br>')
+            : 'Không có ghi chú phát hành.';
+        releaseContent.innerHTML = `
+            <span class="version-badge">v${version}</span>
+            <p style="color: var(--gray); font-size: 14px; margin-bottom: 8px;">Phát hành: ${published}</p>
+            <div style="font-size: 14px; color: var(--gray);">${body}</div>
+        `;
+    } catch (err) {
+        document.getElementById('versionInfo').innerHTML = `
+            Phiên bản <strong>v0.1.0</strong> —
+            <a href="https://github.com/duien1095/inno-project-builder/releases" target="_blank">Xem trên GitHub →</a>
+        `;
+        document.getElementById('releaseContent').innerHTML = `
+            <p style="color: var(--gray);">
+                Chưa có phiên bản release chính thức. Vui lòng xem trên GitHub.
+            </p>
+        `;
+    }
+}
+
+loadLatestRelease();
+</script>
+
+</body>
+</html>

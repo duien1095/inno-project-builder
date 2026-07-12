@@ -19,7 +19,7 @@ def build_tree_overview_text(
     """Tạo nội dung hiển thị tổng quan cây thư mục theo template."""
     lines: list[str] = [f"Nơi lưu: {project_folder}", f"Template: {template_name}", "", "Tổng quan cây thư mục:"]
 
-    created_dirs_set = {path.resolve() for path in created_dirs if path.exists()}
+    created_dirs_set = {path.resolve() for path in created_dirs}
     if folder_paths:
         for folder_path in sorted(folder_paths):
             target_path = project_folder / folder_path
@@ -28,12 +28,15 @@ def build_tree_overview_text(
             except ValueError:
                 relative_path = target_path
 
-            if target_path.exists():
-                status = "Đã tạo mới" if target_path.resolve() in created_dirs_set else "Đã có sẵn"
+            if target_path.resolve() in created_dirs_set:
+                status = "Đã tạo mới"
+            elif target_path.exists():
+                status = "Đã có sẵn"
             else:
                 status = "Chưa tạo"
 
-            lines.append(f"- {relative_path} [{status}]")
+            display_path = str(relative_path).replace("\\", "/")
+            lines.append(f"- {display_path} [{status}]")
     else:
         lines.append("- Không có thư mục nào trong template.")
 
