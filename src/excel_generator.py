@@ -329,6 +329,13 @@ def generate_excel_from_template(
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
+    # ── Chống ghi đè ──
+    if output_path.exists():
+        raise FileExistsError(
+            f"❌ File Excel đầu ra đã tồn tại: {output_path}\n"
+            f"   Vui lòng xoá file cũ hoặc chọn output path khác."
+        )
+
     wb = Workbook()
 
     for sheet_data in sheets_data:
