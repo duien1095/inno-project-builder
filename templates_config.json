@@ -7,6 +7,12 @@
         "02.PROCESS",
         "03.OUTPUT",
 
+        "03.OUTPUT/01.PHAT_HANH",
+        "03.OUTPUT/02.LAY_Y_KIEN",
+        "03.OUTPUT/03.THAM_DINH",
+        "03.OUTPUT/04.TRINH_PHE_DUYET",
+        "03.OUTPUT/05.HS_BAN_GIAO",
+
         "01.INPUT/01.PHAP_LY",
         "01.INPUT/02.RANH_GIOI",
         "01.INPUT/03.DO_DAC",
@@ -20,11 +26,11 @@
         "01.INPUT/07.QHCT_DA",
         "01.INPUT/08.QH_NGANH",
 
-        "01.INPUT/09.DU_LIEU_NEN",
-        "01.INPUT/09.DU_LIEU_NEN/01.KH_SDD",
-        "01.INPUT/09.DU_LIEU_NEN/02.DIA_CHINH",
-        "01.INPUT/09.DU_LIEU_NEN/03.QUY_DAT_CONG",
-        "01.INPUT/09.DU_LIEU_NEN/04.CT_HTXH",
+        "01.INPUT/09.DL_NEN",
+        "01.INPUT/09.DL_NEN/01.KH_SDD",
+        "01.INPUT/09.DL_NEN/02.DIA_CHINH",
+        "01.INPUT/09.DL_NEN/03.QUY_DAT_CONG",
+        "01.INPUT/09.DL_NEN/04.CT_HTXH",
 
         "01.INPUT/10.DL_LIEN_DANH",
         "01.INPUT/11.DL_CAP_NHAT",
@@ -36,7 +42,7 @@
         "02.PROCESS/04.PPT",
         "02.PROCESS/05.KMZ",
         "02.PROCESS/06.PSD",
-        "02.PROCESS/07.ANH_MINH_HOA",
+        "02.PROCESS/07.HINH_ANH",
         "02.PROCESS/08.GIS"
       ]
     },
@@ -47,6 +53,12 @@
         "01.INPUT",
         "02.PROCESS",
         "03.OUTPUT",
+
+        "03.OUTPUT/01.PHAT_HANH",
+        "03.OUTPUT/02.LAY_Y_KIEN",
+        "03.OUTPUT/03.THAM_DINH",
+        "03.OUTPUT/04.TRINH_PHE_DUYET",
+        "03.OUTPUT/05.HS_BAN_GIAO",
 
         "01.INPUT/01.PHAP_LY",
         "01.INPUT/02.RANH_GIOI",
@@ -60,11 +72,11 @@
         "01.INPUT/06.QHCT_DA",
         "01.INPUT/07.QH_NGANH",
 
-        "01.INPUT/08.DU_LIEU_NEN",
-        "01.INPUT/08.DU_LIEU_NEN/01.KH_SDD",
-        "01.INPUT/08.DU_LIEU_NEN/02.DIA_CHINH",
-        "01.INPUT/08.DU_LIEU_NEN/03.QUY_DAT_CONG",
-        "01.INPUT/08.DU_LIEU_NEN/04.CT_HTXH",
+        "01.INPUT/08.DL_NEN",
+        "01.INPUT/08.DL_NEN/01.KH_SDD",
+        "01.INPUT/08.DL_NEN/02.DIA_CHINH",
+        "01.INPUT/08.DL_NEN/03.QUY_DAT_CONG",
+        "01.INPUT/08.DL_NEN/04.CT_HTXH",
 
         "01.INPUT/09.DL_LIEN_DANH",
         "01.INPUT/10.DL_CAP_NHAT",
@@ -76,7 +88,7 @@
         "02.PROCESS/04.PPT",
         "02.PROCESS/05.KMZ",
         "02.PROCESS/06.PSD",
-        "02.PROCESS/07.ANH_MINH_HOA",
+        "02.PROCESS/07.HINH_ANH",
         "02.PROCESS/08.GIS"
       ]
     },
@@ -87,6 +99,12 @@
         "01.INPUT",
         "02.PROCESS",
         "03.OUTPUT",
+
+        "03.OUTPUT/01.PHAT_HANH",
+        "03.OUTPUT/02.LAY_Y_KIEN",
+        "03.OUTPUT/03.THAM_DINH",
+        "03.OUTPUT/04.TRINH_PHE_DUYET",
+        "03.OUTPUT/05.HS_BAN_GIAO",
 
         "01.INPUT/01.PHAP_LY",
         "01.INPUT/02.RANH_GIOI",
@@ -100,11 +118,11 @@
         "01.INPUT/06.DA_LIEN_QUAN",
         "01.INPUT/07.QH_NGANH",
 
-        "01.INPUT/08.DU_LIEU_NEN",
-        "01.INPUT/08.DU_LIEU_NEN/01.KH_SDD",
-        "01.INPUT/08.DU_LIEU_NEN/02.DIA_CHINH",
-        "01.INPUT/08.DU_LIEU_NEN/03.QUY_DAT_CONG",
-        "01.INPUT/08.DU_LIEU_NEN/04.CT_HTXH",
+        "01.INPUT/08.DL_NEN",
+        "01.INPUT/08.DL_NEN/01.KH_SDD",
+        "01.INPUT/08.DL_NEN/02.DIA_CHINH",
+        "01.INPUT/08.DL_NEN/03.QUY_DAT_CONG",
+        "01.INPUT/08.DL_NEN/04.CT_HTXH",
 
         "01.INPUT/09.DL_LIEN_DANH",
         "01.INPUT/10.DL_CAP_NHAT",
@@ -116,7 +134,7 @@
         "02.PROCESS/04.PPT",
         "02.PROCESS/05.KMZ",
         "02.PROCESS/06.PSD",
-        "02.PROCESS/07.ANH_MINH_HOA",
+        "02.PROCESS/07.HINH_ANH",
         "02.PROCESS/08.GIS"
       ]
     },
@@ -148,7 +166,7 @@
         "02.PROCESS/03.CAD",
         "02.PROCESS/04.KMZ",
         "02.PROCESS/05.PSD",
-        "02.PROCESS/06.ANH_MINH_HOA"
+        "02.PROCESS/06.HINH_ANH"
       ]
     },
 
@@ -179,7 +197,7 @@
         "02.PROCESS/03.CAD",
         "02.PROCESS/04.KMZ",
         "02.PROCESS/05.PSD",
-        "02.PROCESS/06.ANH_MINH_HOA"
+        "02.PROCESS/06.HINH_ANH"
       ]
     }
   ]

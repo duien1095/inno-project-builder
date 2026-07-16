@@ -8,7 +8,8 @@
             "module": "src.main",
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
-            "justMyCode": true
+            "justMyCode": true,
+            "python": "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
         }
     ]
 }

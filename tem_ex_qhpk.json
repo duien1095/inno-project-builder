@@ -1,0 +1,71 @@
+{
+  "excel_templates": [
+    {
+      "template_name": "QHPK",
+      "file_name": "00_DanhMucDuLieu_qhpk.xlsx",
+      "sheets": [
+        {
+          "sheet_name": "DANH_MUC_DU_LIEU",
+          "title_block": {
+            "cell_range": "A1:G1",
+            "merged": true,
+            "lines": [
+              "DANH MỤC DỮ LIỆU",
+              "Tên đồ án:",
+              "Địa điểm:",
+              "Quy mô:",
+              "Cơ quan lập QH:",
+              "Cơ quan thẩm định:",
+              "Cơ quan phê duyệt:",
+              "Ngày nhận dự án:"
+            ]
+          },
+          "header_row": 2,
+          "columns": [
+            "STT",
+            "Hạng mục",
+            "Tên dữ liệu",
+            "Tình trạng",
+            "Ngày nhận",
+            "Nguồn cung cấp",
+            "Ghi chú"
+          ],
+          "rows": [
+            { "stt": "1", "name": "VĂN BẢN PHÁP LÝ", "level": 1 },
+            { "stt": "2", "name": "RANH GIỚI", "level": 1 },
+            { "stt": "3", "name": "BẢN ĐỒ ĐO ĐẠC", "level": 1 },
+            { "stt": "4", "name": "QH CẤP TRÊN", "level": 1 },
+            { "stt": "4.1", "name": "QH Tỉnh", "level": 2 },
+            { "stt": "4.2", "name": "QHC", "level": 2 },
+            { "stt": "5", "name": "QHPK", "level": 1 },
+            { "stt": "5.1", "name": "QHPK đã duyệt", "level": 2 },
+            { "stt": "5.2", "name": "Điều chỉnh cục bộ QHPK", "level": 2 },
+            { "stt": "6", "name": "QHCT VÀ DỰ ÁN LIÊN QUAN", "level": 1 },
+            { "stt": "7", "name": "QH NGÀNH", "level": 1 },
+            { "stt": "8", "name": "DỮ LIỆU NỀN", "level": 1 },
+            { "stt": "8.1", "name": "Kế hoạch sử dụng đất", "level": 2 },
+            { "stt": "8.2", "name": "Bản đồ địa chính", "level": 2 },
+            { "stt": "8.3", "name": "Quỹ đất công", "level": 2 },
+            { "stt": "8.4", "name": "Công trình HTXH", "level": 2 }
+          ]
+        },
+        {
+          "sheet_name": "NHAT_KY_CAP_NHAT",
+          "title_block": {
+            "cell_range": "A1:D1",
+            "merged": true,
+            "lines": ["NHẬT KÝ CẬP NHẬT"]
+          },
+          "header_row": 2,
+          "columns": [
+            "STT",
+            "Ngày gửi",
+            "Người cập nhật",
+            "Nội dung cập nhật"
+          ],
+          "empty_rows_for_entry": 20
+        }
+      ]
+    }
+  ]
+}

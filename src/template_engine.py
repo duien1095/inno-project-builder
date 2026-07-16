@@ -2,6 +2,97 @@
 
 from pathlib import Path
 
+from src.excel_generator import generate_excel_for_project
+from src.pdf_generator import generate_pdf_from_template
+
+
+# Danh sách template được sinh file PDF
+PDF_TEMPLATE_NAMES = {"QHC", "QHPK", "QHCT"}
+PDF_TEMPLATE_FILENAME = "template_pdf.json"
+PDF_OUTPUT_FILENAME = "HuongDanLuuTru.pdf"
+
+
+def generate_pdf_template(
+    project_folder: Path,
+    template_name: str,
+    folder_paths: list[str] | None = None,
+    created_files: list[Path] | None = None,
+) -> Path | None:
+    """Đọc template_pdf.json và sinh file PDF.
+
+    File PDF được lưu vào thư mục template (nếu tìm thấy trong folder_paths).
+    Nếu không tìm thấy thư mục template, lưu vào gốc dự án.
+
+    Chỉ sinh cho QHC, QHPK, QHCT. Bỏ qua CONCEPT_*.
+
+    Args:
+        project_folder: Thư mục gốc dự án.
+        template_name: Tên template.
+        folder_paths: Danh sách folder paths từ config (để tìm thư mục đích).
+        created_files: List để ghi nhận file đã tạo.
+
+    Returns:
+        Đường dẫn file PDF đã tạo, None nếu không tạo.
+    """
+    if template_name not in PDF_TEMPLATE_NAMES:
+        return None
+
+    if created_files is None:
+        created_files = []
+
+    # Tìm file template_pdf.json
+    source_candidates = [
+        Path.cwd() / PDF_TEMPLATE_FILENAME,
+        Path(__file__).resolve().parent.parent / PDF_TEMPLATE_FILENAME,
+    ]
+
+    json_path: Path | None = None
+    for candidate in source_candidates:
+        if candidate.exists() and candidate.is_file():
+            json_path = candidate
+            break
+
+    if json_path is None:
+        return None
+
+    # Tìm thư mục template trong folder_paths
+    target_dir = _find_template_folder(project_folder, folder_paths)
+    if target_dir is None:
+        target_dir = project_folder
+
+    output_path = target_dir / PDF_OUTPUT_FILENAME
+    try:
+        generate_pdf_from_template(
+            json_path=json_path,
+            output_path=output_path,
+            project_name=project_folder.name,
+        )
+        if output_path.exists():
+            created_files.append(output_path)
+            return output_path
+    except Exception:
+        pass
+
+    return None
+
+
+def _find_template_folder(project_folder: Path, folder_paths: list[str] | None) -> Path | None:
+    """Tìm thư mục chứa 'TEMPLATE' hoặc 'HUONG_DAN' hoặc 'HDSD' trong folder_paths.
+
+    Nếu không tìm thấy, trả về None (sẽ lưu ở gốc dự án).
+    """
+    if not folder_paths:
+        return None
+
+    for folder_path in folder_paths:
+        name_upper = folder_path.upper()
+        if "TEMPLATE" in name_upper or "HUONG_DAN" in name_upper or "HDSD" in name_upper:
+            target = project_folder / folder_path
+            if target.exists() and target.is_dir():
+                return target
+
+    return None
+
 
 def is_safe_template_folder_path(folder_path: str) -> bool:
     """Kiểm tra folder path từ template không sử dụng local absolute path hoặc traversal.
@@ -70,23 +161,29 @@ def validate_project_folder_path(project_folder: Path) -> None:
 def create_template_folders(
     project_folder: Path,
     folder_paths: list[str],
+    template_name: str | None = None,
     created_dirs: list[Path] | None = None,
-) -> list[Path]:
+    created_files: list[Path] | None = None,
+) -> tuple[list[Path], list[Path]]:
     """Tạo các thư mục theo danh sách trong template.
 
     Args:
         project_folder: Thư mục gốc dự án.
         folder_paths: Danh sách đường dẫn tương đối cần tạo.
+        template_name: Tên template (để copy template_pdf.json nếu có).
         created_dirs: List để ghi nhận các thư mục đã tạo mới (optional).
+        created_files: List để ghi nhận các file đã tạo mới (optional).
 
     Returns:
-        Danh sách các thư mục đã được tạo mới.
+        Tuple (created_dirs, created_files).
 
     Raises:
         ValueError: Nếu có đường dẫn không hợp lệ hoặc vượt ra ngoài dự án.
     """
     if created_dirs is None:
         created_dirs = []
+    if created_files is None:
+        created_files = []
 
     project_resolved = project_folder.resolve()
 
@@ -106,7 +203,20 @@ def create_template_folders(
             target_path.mkdir(parents=True, exist_ok=True)
             created_dirs.append(target_path)
 
-    return created_dirs
+    # Sinh file PDF hướng dẫn lưu trữ cho QHC, QHPK, QHCT
+    if template_name and template_name in PDF_TEMPLATE_NAMES:
+        generate_pdf_template(project_folder, template_name, folder_paths, created_files)
+
+    # Sinh file Excel bảng tính chỉ tiêu vào thư mục INPUT/PROCESS
+    if template_name and template_name in PDF_TEMPLATE_NAMES:
+        generate_excel_for_project(
+            project_folder,
+            template_name,
+            folder_paths,
+            created_files,
+        )
+
+    return created_dirs, created_files
 
 
 def _format_relative_path(path: Path, base: Path) -> str:

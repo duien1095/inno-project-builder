@@ -1,0 +1,62 @@
+{
+  "document_name": "HUONG_DAN_LUU_TRU",
+  "version": "1.0",
+  "overview": {
+    "input": "Nơi lưu dữ liệu gốc nhận từ bên ngoài (chủ đầu tư, sở ngành, đơn vị liên quan) trước khi xử lý",
+    "process": "Nơi lưu hồ sơ, dữ liệu đang trong quá trình thực hiện, chỉnh sửa nội bộ",
+    "output": "Nơi lưu các sản phẩm hồ sơ đã hoàn thiện qua từng giai đoạn",
+    "dl_cap_nhat": "Nơi lưu dữ liệu mới nhận trong quá trình thực hiện dự án",
+    "gop_y_hop": "Nơi lưu giấy mời họp, biên bản họp, thông báo kết luận, tài liệu bổ sung"
+  },
+  "sections": [
+    {
+      "name": "01.INPUT",
+      "items": [
+        { "folder": "01.PHAP_LY", "description": "Văn bản pháp lý của dự án: quyết định, chủ trương đầu tư, giấy phép liên quan" },
+        { "folder": "02.RANH_GIOI", "description": "Hồ sơ xác định ranh giới, mốc giới và phạm vi nghiên cứu của dự án" },
+        { "folder": "03.DO_DAC", "description": "Bản đồ địa hình và dữ liệu đo đạc thực địa phục vụ lập đồ án" },
+        { "folder": "04.QH_CAP_TREN", "description": "Đồ án quy hoạch cấp trên và tài liệu tham chiếu liên quan đến khu vực dự án" },
+        { "folder": "05.QHC", "description": "Hồ sơ quy hoạch chung (QHC) có liên quan đến phạm vi dự án" },
+        { "folder": "06.QHPK", "description": "Hồ sơ quy hoạch phân khu (QHPK) có liên quan đến phạm vi dự án" },
+        { "folder": "07.QHCT_DA", "description": "Hồ sơ quy hoạch chi tiết (QHCT) và các dự án khác có liên quan trong khu vực" },
+        { "folder": "08.QH_NGANH", "description": "Đồ án quy hoạch chuyên ngành (giao thông, hạ tầng kỹ thuật...) liên quan đến dự án" },
+        { "folder": "09.DL_NEN", "description": "Dữ liệu nền phục vụ lập đồ án, gồm: kế hoạch sử dụng đất, bản đồ địa chính, quỹ đất công, công trình HTXH..." },
+        { "folder": "10.DL_LIEN_DANH", "description": "Dữ liệu do các đơn vị liên danh, đối tác phối hợp thực hiện cung cấp" },
+        {
+          "folder": "11.DL_CAP_NHAT",
+          "description": "Dữ liệu mới nhận trong quá trình thực hiện",
+          "naming_rule": "YYMMDD_TenHoSo_NguoiGui"
+        },
+        {
+          "folder": "12.GOP_Y_HOP",
+          "description": "Biên bản họp, thông báo kết luận cuộc họp và các ý kiến góp ý liên quan đến dự án",
+          "naming_rule": "YYMMDD_TenCuocHop",
+          "subfolders": ["01.GIAY_MOI", "02.TBKL", "03.DL_BO_SUNG"]
+        }
+      ]
+    },
+    {
+      "name": "02.PROCESS",
+      "items": [
+        { "folder": "01.HO_SO", "description": "Hồ sơ tổng hợp của đồ án đang trong quá trình thực hiện" },
+        { "folder": "02.CAD", "description": "File bản vẽ AutoCAD (.dwg) đang thực hiện, chỉnh sửa" },
+        { "folder": "03.WORD", "description": "File thuyết minh, báo cáo soạn thảo bằng Word (.doc, .docx)" },
+        { "folder": "04.PPT", "description": "File trình chiếu PowerPoint phục vụ họp, báo cáo, thuyết trình" },
+        { "folder": "05.KMZ", "description": "File dữ liệu không gian dạng Google Earth (.kmz, .kml)" },
+        { "folder": "06.PSD", "description": "File dàn trang, chỉnh sửa hình ảnh bằng Photoshop (.psd)" },
+        { "folder": "07.HINH_ANH", "description": "Hình ảnh minh họa, phối cảnh phục vụ thuyết minh đồ án" },
+        { "folder": "08.GIS", "description": "Dữ liệu hệ thống thông tin địa lý (GIS) phục vụ phân tích, biên tập bản đồ" }
+      ]
+    },
+    {
+      "name": "03.OUTPUT",
+      "items": [
+        { "folder": "01.PHAT_HANH", "description": "Hồ sơ chính thức đã hoàn thiện, sẵn sàng phát hành cho các bên liên quan" },
+        { "folder": "02.LAY_Y_KIEN", "description": "Hồ sơ dùng để lấy ý kiến cộng đồng dân cư, sở ngành liên quan" },
+        { "folder": "03.THAM_DINH", "description": "Hồ sơ trình cơ quan chuyên môn thẩm định trước khi phê duyệt" },
+        { "folder": "04.TRINH_PHE_DUYET", "description": "Hồ sơ trình cấp có thẩm quyền xem xét, phê duyệt" },
+        { "folder": "05.HS_BAN_GIAO", "description": "Hồ sơ đã được phê duyệt chính thức, là sản phẩm cuối cùng của dự án" }
+      ]
+    }
+  ]
+}

@@ -423,8 +423,10 @@ class ProjectInitApp:
         """Tạo thư mục dự án theo template đã chọn."""
         try:
             project_folder, folders = self._validate_inputs()
-            created_dirs = create_template_folders(project_folder, folders)
-            self._show_result(project_folder, created_dirs, [])
+            created_dirs, created_files = create_template_folders(
+                project_folder, folders, template_name=self.selected_template
+            )
+            self._show_result(project_folder, created_dirs, created_files)
         except ValueError as exc:
             self.show_error(str(exc))
         except Exception as exc:
