@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from project_init import (
+from src.template_engine import (
     is_safe_template_folder_path,
     validate_project_folder_path,
 )
